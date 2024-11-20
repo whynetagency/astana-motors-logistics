@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  height: 100vh;
+
+  .img-wrapper {
+    height: 100%;
+    img {
+      max-width: 100%;
+      object-fit: cover;
+      height: 100%;
+      border-radius: 53px;
+    }
+  }
+
+  .form-wrapper {
+    display: flex;
+    justify-content: center;
+    form {
+      max-width: 400px;
+      background-color: #fff;
+      padding: 20px;
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .form-label {
+        font-weight: 100;
+        font-size: 14px !important;
+      }
+    }
+  }
+}

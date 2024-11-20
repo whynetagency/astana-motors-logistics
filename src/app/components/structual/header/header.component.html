@@ -1,0 +1,119 @@
+<header #headerElement
+        class="header shadow"
+        [class.header-fixed]="isHeaderFixed"
+>
+  <div class="container-fluid container-xxl">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#">
+        <img src="assets/icons/logo.png" class="only-light d-inline-block align-top" alt="AML logo">
+      </a>
+      <button
+        class="navbar-toggler"
+        (click)="onToggleMenu()"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item" [class.active]="currentRoute === 'about-us'" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="nav-link"
+               (click)="navigateTo('about-us')"
+            >
+              О нас
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="currentRoute === 'carriages'" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="nav-link"
+               (click)="navigateTo('/carriages')"
+            >
+              Перевозки
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="currentRoute === 'cooperation'" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="nav-link"
+               (click)="navigateTo('/cooperation')"
+            >
+              Сотрудничество
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="currentRoute === 'payment'" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="nav-link"
+               (click)="navigateTo('/payment')"
+            >
+              Оплата
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="currentRoute === 'faq'" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="nav-link"
+               (click)="navigateTo('/faq')"
+            >
+              FAQ
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="currentRoute === 'contacts'" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="nav-link"
+               (click)="navigateTo('/contacts')"
+            >
+              Контакты
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="currentRoute === 'vacancies'" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="nav-link"
+               (click)="navigateTo('/v')"
+            >
+              Вакансии
+            </a>
+          </li>
+        </ul>
+
+        <div class="dropdown__blur"
+             (click)="onToggleMenu()"
+             type="button"
+             data-bs-toggle="collapse"
+             data-bs-target="#navbarNav"
+        ></div>
+      </div>
+      <div class="header__buttons">
+        @if (authService.isUserLoggedIn | async) {
+          <div class="btn-group align-items-center" dropdown [insideClick]="true" placement="bottom center">
+            <button dropdownToggle class="header__button header__button_user">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+              </svg>
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+              <li role="menuitem" class="dropdown-item pe-none">
+                {{ (authService.user | async)?.email }}
+              </li>
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem"><a class="dropdown-item" href="/exchange-account">Account</a></li>
+              <!--<li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>-->
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem" class="d-flex justify-content-center">
+                <button (click)="authService.signOut()" class="button__main button__main-small button__main-black-outline">
+                  Sign Out
+                </button>
+              </li>
+            </ul>
+          </div>
+        } @else if ((authService.isUserLoggedIn | async) === false) {
+          <button (click)="navigateTo('login')" class="btn btn-primary">
+            Войти
+          </button>
+          <button (click)="navigateTo('register')" class="btn btn-primary">
+            Создать Аккаунт
+          </button>
+        }
+      </div>
+
+    </nav>
+  </div>
+</header>

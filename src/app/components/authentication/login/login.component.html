@@ -1,0 +1,45 @@
+<section class="h-100">
+  <div class="container-fluid container-xxl d-flex align-items-center h-100">
+    <div class="row align-items-center h-75">
+    <div class="col-7 h-100">
+      <div class="img-wrapper">
+        <img src="assets/images/background.jpg" alt="">
+      </div>
+    </div>
+    <div class="col-md-5 d-flex align-items-center form-wrapper">
+      <form [formGroup]="loginForm" class="w-100 p-4 shadow rounded">
+        <h3 class="mb-2 text-center">Добро пожаловать в <span class="text-danger">Astana Motors Logistic</span></h3>
+        <span class="d-inline-block mb-2 subtitle">Пожалуйста, войдите в свою учетную запись</span>
+        <div class="mb-3">
+          <label for="password" class="form-label">Емейл</label>
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <div class="w-100 d-flex justify-content-between">
+            <label for="password" class="form-label">Пароль</label>
+            <a [routerLink]="'/reset-password'" class="form-label reset-password text-danger">Забыли пароль?</a>
+          </div>
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-3 mb-3" (click)="login()">Войти</button>
+        <div class="w-100 text-center">
+          <span>Нет аккаунта?
+            <a [routerLink]="'/sign-up'" class="form-label text-danger">Создать аккаунт</a>
+          </span>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</section>

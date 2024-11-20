@@ -1,0 +1,9 @@
+@if (showHeaderFooter) {
+<app-header/>
+}
+<main>
+<router-outlet />
+</main>
+@if (isLoading) {
+  <app-loader />
+}

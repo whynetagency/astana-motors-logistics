@@ -1,0 +1,54 @@
+@mixin position-center($text-align: center) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: $text-align;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-bg) url("/assets/images/main-bg.svg") no-repeat center/cover;
+  z-index: 9999;
+
+  img {
+    @include position-center;
+    width: 15vw;
+    max-width: 140px;
+    min-width: 80px;
+    height: auto;
+    animation: blur-text 3s ease-out infinite;
+  }
+}
+
+@keyframes blur-text {
+  0% {
+    filter: blur(0px);
+    transform: scale(1.2);
+  }
+  50% {
+    filter: blur(2px);
+    transform: scale(1);
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1.2);
+  }
+}
+:host-context(.dark) {
+  .loading{
+    background: #1B2028 url("/assets/images/main-bg.svg") no-repeat center/cover;
+  }
+  .card{
+    background: #20252f;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,247 @@
+.cooperation {
+  min-height: 100vh;
+
+  .container {
+  }
+
+  h1, h2 {
+    color: #333;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  ol li {
+    font-size: 16px;
+    color: #555;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .cooperation-intro, .cooperation-benefits, .cooperation-process, .cooperation-contact {
+    margin-bottom: 40px;
+  }
+
+  .cooperation-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .cooperation-card p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  form {
+    margin-top: 20px;
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .cooperation-process {
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .process-steps {
+      .step-card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: contain;
+          margin-bottom: 20px;
+        }
+
+        h4 {
+          font-size: 20px;
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 14px;
+          color: #555;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .process-steps .row {
+        flex-direction: column;
+      }
+
+      .step-card {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    .cooperation-card {
+      margin-bottom: 30px;
+    }
+
+    ul li, ol li {
+      font-size: 14px;
+    }
+
+    button {
+      font-size: 14px;
+    }
+  }
+
+  .contact-methods {
+    margin-top: 40px;
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      .btn {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #fff;
+        transition: background-color 0.3s;
+
+        &.btn-whatsapp {
+          background-color: #25d366;
+        }
+
+        &.btn-telegram {
+          background-color: #0088cc;
+        }
+
+        .contact-icon {
+          width: 24px;
+          height: 24px;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background-color: #005f5f;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-form-container {
+      padding: 30px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    .form-control {
+      font-size: 14px;
+    }
+
+    .btn-submit {
+      font-size: 14px;
+    }
+  }
+
+}

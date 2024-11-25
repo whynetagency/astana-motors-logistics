@@ -8,8 +8,7 @@ import {NavigationStart, Router} from "@angular/router";
 export class LoaderService {
   public loading$ = new BehaviorSubject<boolean>(false);
 
-  noLoaderUrls = ['login', 'sign-up', 'password-reset', 'privacy-policy', 'offer-agreement', 'payments'];
-
+  noLoaderUrls = ['login', 'sign-up', 'password-reset', 'privacy-policy', 'offer-agreement', 'admin'];
   constructor(
     private router: Router,
   ) {

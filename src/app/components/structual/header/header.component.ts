@@ -1,15 +1,17 @@
 import { Component, ElementRef, HostListener, Inject, Input, ViewChild } from '@angular/core';
 import { AsyncPipe, DOCUMENT } from '@angular/common';
 import { AuthService } from '../../../shared/services/auth.service';
-import { Router } from '@angular/router';
-import { BsDropdownDirective } from 'ngx-bootstrap/dropdown';
+import { Router, RouterLink } from '@angular/router';
+import { BsDropdownDirective, BsDropdownMenuDirective } from 'ngx-bootstrap/dropdown';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     AsyncPipe,
-    BsDropdownDirective
+    BsDropdownDirective,
+    RouterLink,
+    BsDropdownMenuDirective
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

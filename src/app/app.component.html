@@ -4,6 +4,9 @@
 <main>
 <router-outlet />
 </main>
+@if (showHeaderFooter) {
+  <app-footer />
+}
 @if (isLoading) {
   <app-loader />
 }

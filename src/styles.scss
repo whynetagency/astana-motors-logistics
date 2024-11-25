@@ -4,7 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
 }
 
 .form-label {
@@ -26,11 +27,11 @@
 .btn {
   font-family: "Open Sans", sans-serif;
   font-weight: 100 !important;
-  background-color: #d21113 !important;
+  background-color: #EC1C26 !important;
   border: 1px solid transparent !important;
 
   &:hover {
-    border: 1px solid #d21113 !important;
+    border: 1px solid #EC1C26 !important;
     background-color: #fff !important;
     color: #464343 !important;
     transition: all .5s cubic-bezier(.25,.74,.22,.99) !important;

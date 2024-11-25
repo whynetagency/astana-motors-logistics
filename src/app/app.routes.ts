@@ -11,6 +11,8 @@ import { FaqComponent } from './components/faq/faq.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { UserGuard } from './shared/guards/user.guard';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { ResetPasswordComponent } from './components/authentication/reset-password/reset-password.component';
+import { CareersComponent } from './components/careers/careers.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,5 +25,6 @@ export const routes: Routes = [
   { path: 'cooperation', component: CooperationComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'payment', component: PaymentComponent },
-  { path: 'reset-password', component: PaymentComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'careers', component: CareersComponent },
 ];

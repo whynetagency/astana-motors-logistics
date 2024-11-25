@@ -1,0 +1,80 @@
+.carriages {
+  min-height: 100vh;
+
+  .card-img-top {
+    width: auto;
+    margin: 0 auto;
+    padding: 1rem;
+    max-height: 135px;
+  }
+
+  .contact-methods {
+    margin-top: 40px;
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      .btn {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #fff;
+        transition: background-color 0.3s;
+
+        &.btn-whatsapp {
+          background-color: #25d366;
+        }
+
+        &.btn-telegram {
+          background-color: #0088cc;
+        }
+
+        .contact-icon {
+          width: 24px;
+          height: 24px;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background-color: #005f5f;
+        }
+      }
+    }
+  }
+
+  section {
+    scroll-margin-top: 100px;
+  }
+
+  .nav-pills .nav-link {
+    color: #EE1924;
+    border-radius: 30px;
+  }
+
+  .nav-pills .nav-link:hover {
+    color: white;
+    background-color: #EE1924;
+  }
+
+  .nav-pills .nav-link.active {
+    color: white;
+    background-color: #EE1924;
+  }
+
+  .nav-pills .nav-item .nav-link.active {
+    font-weight: bold;
+  }
+
+}

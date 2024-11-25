@@ -1,0 +1,61 @@
+.order-status {
+  .card-header {
+    background-color: #d21113 !important;
+  }
+}
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .status-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+
+    &.completed {
+      background-color: #28a745;
+    }
+
+    &.cancelled {
+      background-color: #dc3545;
+    }
+
+    &.in-progress, &.pending {
+      background-color: #ffc107;
+    }
+
+  }
+
+}
+
+.order-details {
+  margin-bottom: 20px;
+  div {
+    margin-bottom: 8px;
+  }
+
+  .order-log {
+    h3 {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        padding: 8px;
+        background-color: #f1f1f1;
+        margin-bottom: 8px;
+        border-radius: 4px;
+      }
+    }
+
+  }
+}

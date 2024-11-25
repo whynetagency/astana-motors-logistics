@@ -5,11 +5,12 @@ import { LoaderComponent } from './components/structual/loader/loader.component'
 import { AuthService } from './shared/services/auth.service';
 import { HeaderComponent } from './components/structual/header/header.component';
 import { filter } from 'rxjs';
+import { FooterComponent } from './components/structual/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoaderComponent, HeaderComponent],
+  imports: [RouterOutlet, LoaderComponent, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit{
   currentUrl: string = '';
   isHeaderFooterVisible: boolean = true;
   showHeaderFooter: boolean = true;
-  private hideRoutes: string[] = ['/login', '/sign-up', '/password-reset'];
+  private hideRoutes: string[] = ['/login', '/sign-up', '/reset-password', '/admin'];
 
   constructor(
     private loaderService: LoaderService,
@@ -29,6 +30,7 @@ export class AppComponent implements OnInit{
   ) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
+        this.currentUrl = event.url.replace('/', '');
         this.showHeaderFooter = !this.hideRoutes.includes(event.url)
       }
     });
@@ -39,8 +41,6 @@ export class AppComponent implements OnInit{
     this.loaderService.loading$.subscribe((value: boolean) => {
       this.isLoading = value;
       this.cdr.detectChanges();
-
-      this.checkHeaderVisibility();
     })
   }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoaderService } from '../../shared/services/loader.service';
 
 @Component({
   selector: 'app-payment',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './payment.component.scss'
 })
 export class PaymentComponent {
-
+  constructor(
+    private loaderService: LoaderService,
+  ) {
+    this.loaderService.loading$.next(false);
+  }
 }

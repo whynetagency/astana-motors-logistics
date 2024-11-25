@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
 import {
   createUserWithEmailAndPassword,
-  onAuthStateChanged,
+  onAuthStateChanged, reauthenticateWithCredential,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
-  signOut
+  signOut, updateEmail,
 } from '@angular/fire/auth';
-import {collection, collectionData, doc, Firestore, getDoc, setDoc, updateDoc} from '@angular/fire/firestore';
-import {getAuth} from 'firebase/auth';
-import {BehaviorSubject} from 'rxjs';
-import {Router} from '@angular/router';
+import { collection, collectionData, doc, Firestore, getDoc, setDoc, updateDoc } from '@angular/fire/firestore';
+import { getAuth, EmailAuthProvider } from 'firebase/auth';
+import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 import { ISignUpData, IUser } from '../models/user.model';
-import { CollectionReference, DocumentData } from '@angular/fire/compat/firestore';
+import { CollectionReference, DocumentData, DocumentReference } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -110,5 +110,39 @@ export class AuthService {
       console.error('Error sign in:', error);
       throw error;
     }
+  }
+
+  updateUserData(updatedData: IUser, password?: string): Promise<void> {
+
+    // Перевірка на наявність користувача
+    if (!this.auth.currentUser) {
+      return Promise.reject('Користувач не авторизований');
+    }
+
+    // Якщо email змінився, спробуємо оновити його в Auth
+    if (updatedData.email && updatedData.email !== this.auth.currentUser.email && password) {
+      return this.updateEmailInAuth(updatedData.email, password)
+        .then(() => this.updateFirestoreData(updatedData));
+    }
+
+    // Якщо email не змінюється, оновлюємо дані лише в Firestore
+    return this.updateFirestoreData(updatedData);
+  }
+
+  private async updateEmailInAuth(newEmail: string, userPassword: string): Promise<void> {
+      const user = this.auth.currentUser;
+
+      if (user) {
+        const credential = EmailAuthProvider.credential(user.email!, userPassword);
+        reauthenticateWithCredential(user, credential)
+          .then(() => {
+            return updateEmail(user, newEmail);
+          })
+      }
+  }
+
+  private updateFirestoreData(value: IUser): Promise<void> {
+    const userDoc = doc(this.usersCollection, this.userId) as unknown as DocumentReference<IUser>;
+    return updateDoc(userDoc, value);
   }
 }

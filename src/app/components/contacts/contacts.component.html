@@ -1,1 +1,66 @@
-<p>contacts works!</p>
+<div class="contacts header-padding">
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h1 class="display-4 font-weight-bold">Контакты</h1>
+      <p class="lead text-muted">Свяжитесь с нами, мы всегда рады помочь!</p>
+    </div>
+
+    <section id="contact-info" class="mb-5">
+      <h2 class="text-center mb-4">Наша информация</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Адрес</h5>
+          <p>Казахстан, город Алматы, Розыбакиева 263</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Телефон</h5>
+          <p>+7 771 790 57 68, +7 771 949 99 94</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Электронная почта</h5>
+          <p>{{ 'info@aml.com' }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5 map">
+      <h2 class="text-center mb-4">Наша локация</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.487318129868!2d76.92632007468861!3d43.25395132275295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388365dcb99b37e7%3A0x3476c5ebcb0c10eb!2z0KLQvtGB0YjQsNC90YvQtSDQv9Cw0LvQvtC80LzQ!5e0!3m2!1sru!2skz!4v1672832122167!5m2!1sru!2skz&markers=43.25395132275295,76.92632007468861" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section class="mb-5 contact-form">
+      <h2 class="text-center mb-4">Напишите нам</h2>
+      <form>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Ваше имя</label>
+              <input type="text" class="form-control" id="name" placeholder="Введите ваше имя">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Электронная почта</label>
+              <input type="email" class="form-control" id="email" placeholder="Введите ваш email">
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-2">
+          <label for="message">Сообщение</label>
+          <textarea class="form-control" id="message" rows="5" placeholder="Ваше сообщение"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-2">Отправить сообщение</button>
+      </form>
+    </section>
+
+    <section class="mb-5 social-media">
+      <h2 class="text-center mb-4">Мы в социальных сетях</h2>
+      <div class="text-center">
+        <a href="#" class="btn btn-primary bi-facebook mr-2">&nbsp;Facebook</a>
+        <a href="#" class="btn btn-primary bi-instagram mr-2">&nbsp;Instagram</a>
+      </div>
+    </section>
+  </div>
+</div>

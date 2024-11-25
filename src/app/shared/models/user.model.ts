@@ -1,3 +1,4 @@
+//TODO: added more fields after clarification with the customer
 export interface IUser {
   id: string;
   email: string;

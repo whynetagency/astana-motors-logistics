@@ -1,1 +1,58 @@
-<p>account works!</p>
+<div class="account header-padding d-flex">
+  <aside class="side-menu col-md-3 bg-light p-3">
+    <ul class="menu-list list-unstyled">
+      <li
+        class="menu-item py-2 px-3 mb-2 rounded"
+        [class.active]="currentView === accountView.Profile"
+        (click)="setView(accountView.Profile)"
+      >
+        Мой профиль
+      </li>
+      <li
+        class="menu-item py-2 px-3 mb-2 rounded"
+        [class.active]="currentView === accountView.OrdersHistory"
+        (click)="setView(accountView.OrdersHistory)"
+      >
+        История заказов
+      </li>
+      <li
+        class="menu-item py-2 px-3 mb-2 rounded"
+        [class.active]="currentView === accountView.GPSTracker"
+        (click)="setView(accountView.GPSTracker)"
+      >
+        GPS Трекер
+      </li>
+      <li
+        class="menu-item py-2 px-3 mb-3 rounded"
+        [class.active]="currentView === accountView.OrderStatus"
+        (click)="setView(accountView.OrderStatus)"
+      >
+        Статус заказа
+      </li>
+      <li class="text-center w-100">
+        <button class="btn btn-primary" (click)="logout()">Выйти</button>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- TODO: ADD CONTENT -->
+  <div class="account-content col-md-9 p-4">
+    @switch (currentView) {
+      @case (accountView.Profile) {
+        <app-profile></app-profile>
+      }
+
+      @case (accountView.OrdersHistory) {
+        <app-orders-history></app-orders-history>
+      }
+
+      @case (accountView.GPSTracker) {
+        <app-gps-tracker></app-gps-tracker>
+      }
+
+      @case (accountView.OrderStatus) {
+        <app-order-status [orderId]="'testOrder'"></app-order-status>
+      }
+    }
+  </div>
+</div>

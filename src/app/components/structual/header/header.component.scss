@@ -163,6 +163,19 @@
 }
 
 .header__button_user {
-  width: 42px !important;
-  height: 42px !important;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  svg {
+    width: 42px !important;
+    height: 42px !important;
+  }
 }

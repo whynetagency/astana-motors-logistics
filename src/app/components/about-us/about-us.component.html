@@ -1,1 +1,72 @@
-<p>about-us works!</p>
+<div class="about-us header-padding">
+  <div class="container">
+    <div class="about-header py-4">
+      <h1>О нас</h1>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada lorem ac risus fermentum, vel laoreet nunc luctus. Nulla facilisi. Curabitur volutpat justo eu libero tristique tincidunt. Fusce egestas lorem eu nibh pretium, vel vestibulum ligula laoreet. Integer ac cursus eros. Nam sed purus dolor. Donec placerat turpis at nibh facilisis, nec malesuada metus volutpat. Quisque sit amet lacus magna. Donec sed semper nisi.</p>
+
+    <section class="about-articles my-5">
+      <h2>Статьи</h2>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let article of articles">
+          <div class="card mb-4">
+            <img [src]="article.image" class="card-img-top" [alt]="article.title">
+            <div class="card-body">
+              <h5 class="card-title">{{ article.title }}</h5>
+              <p class="card-text">{{ article.excerpt }}</p>
+              <a href="#" class="btn btn-primary">Читать далее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-reviews my-5">
+      <h2>Отзывы</h2>
+      <div class="row">
+        <div class="col-md-6" *ngFor="let review of reviews">
+          <blockquote class="blockquote">
+            <p>{{ review.text }}</p>
+            <footer class="blockquote-footer">{{ review.author }}</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Співробітники -->
+    <section class="about-team my-5">
+      <h2>Сотрудники</h2>
+      <div class="row">
+        <div class="col-md-3" *ngFor="let member of team">
+          <div class="card mb-4">
+            <img [src]="member.photo" class="card-img-top" [alt]="member.name">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ member.name }}</h5>
+              <p class="card-text">{{ member.position }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-fleet my-5">
+      <h2>Наш автопарк</h2>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let vehicle of fleet">
+          <div class="card mb-4">
+            <img [src]="vehicle.image" class="card-img-top" [alt]="vehicle.name">
+            <div class="card-body">
+              <h5 class="card-title">{{ vehicle.name }}</h5>
+              <p class="card-text">{{ vehicle.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-details my-5">
+      <h2>Реквизиты</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula orci nec nunc venenatis, sed faucibus ipsum sagittis. Integer euismod, nulla at dictum scelerisque, nisi nisl sollicitudin velit, vel malesuada libero neque nec tortor. Etiam scelerisque augue ut lorem facilisis, non pharetra purus accumsan. Curabitur non ligula purus. In consectetur dui vitae nisi sollicitudin, sit amet tincidunt erat ultricies. Donec tempus quam non erat iaculis vehicula.</p>
+    </section>
+  </div>
+</div>

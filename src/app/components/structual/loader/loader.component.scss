@@ -14,7 +14,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--main-bg) url("/assets/images/main-bg.svg") no-repeat center/cover;
+  background: #fff no-repeat center/cover;
   z-index: 9999;
 
   img {
@@ -24,6 +24,8 @@
     min-width: 80px;
     height: auto;
     animation: blur-text 3s ease-out infinite;
+    background-color: transparent;
+    mix-blend-mode: darken;
   }
 }
 
@@ -39,16 +41,5 @@
   100% {
     filter: blur(0px);
     transform: scale(1.2);
-  }
-}
-:host-context(.dark) {
-  .loading{
-    background: #1B2028 url("/assets/images/main-bg.svg") no-repeat center/cover;
-  }
-  .card{
-    background: #20252f;
-    color: #fff;
-    border: none;
-    box-shadow: none;
   }
 }

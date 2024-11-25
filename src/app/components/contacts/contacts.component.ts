@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoaderService } from '../../shared/services/loader.service';
 
 @Component({
   selector: 'app-contacts',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './contacts.component.scss'
 })
 export class ContactsComponent {
-
+  constructor(
+    private loaderService: LoaderService,
+  ) {
+    this.loaderService.loading$.next(false);
+  }
 }

@@ -1,0 +1,15 @@
+.account {
+  min-height: 100vh;
+  display: flex;
+
+}
+.menu-item {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.menu-item.active {
+  background-color: #EC1C26;
+  color: white;
+}
+
